@@ -1,0 +1,31 @@
+.pokemon-bg {
+  width: 180px;
+  height: 180px;
+  border-radius: 100% !important;
+  background-color: lighten(#F16F65, 8%);
+  margin: -130px 0 -50px -20px;
+}
+
+.pokemon-name {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.pokemon-type {
+  color: white;
+  font-size: 12px;
+  background-color: lighten(#F16F65, 8%);
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.pokemon-id {
+  color: white;
+  margin: 16px 0 0 0;
+}
+
+.ov-hidden {
+  overflow: hidden;
+}
