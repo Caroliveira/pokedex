@@ -12,7 +12,7 @@
         hide-details
         placeholder="Search Pokemon"
         prepend-inner-icon="mdi-magnify"
-        background-color="#F5F5F5"
+        background-color="gray6"
       />
     </v-col>
   </v-row>

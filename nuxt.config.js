@@ -37,7 +37,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['@/plugins/axios.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -62,23 +62,36 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://pokeapi.co/api/v2/',
+    headers: { Accept: 'application/json' },
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/scss/variables.scss'],
     theme: {
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+        light: {
+          primary: '#6D7BE3',
+          gray1: '#212121',
+          gray2: '#585858',
+          gray3: '#939393',
+          gray4: '#BCBCBC',
+          gray5: '#E0E0E0',
+          gray6: '#F5F5F5',
+          white: '#ffffff',
+          black: '#1f1f1f',
+          blue: '#4ec6fd',
+          brown: '#705849',
+          gray: '#b8b9cf',
+          green: '#62d5ae',
+          pink: '#f7a2df',
+          purple: '#9f449f',
+          red: '#f16f65',
+          yellow: '#ffce4b',
         },
       },
     },
