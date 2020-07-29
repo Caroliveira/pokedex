@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-content>
-      <v-container class="py-14">
+      <div class="content">
         <nuxt />
-      </v-container>
+      </div>
     </v-content>
   </v-app>
 </template>
@@ -11,3 +11,9 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss" scoped>
+.content {
+  padding: 110px 220px 80px;
+}
+</style>

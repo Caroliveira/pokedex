@@ -1,8 +1,15 @@
 <template>
   <div>
+    <v-img src="/pokeball.svg" class="pokeball" />
     <TitleBar />
     <v-row>
-      <v-col v-for="pokemon in pokemons" :key="pokemon.id" md="6" lg="4">
+      <v-col
+        v-for="pokemon in pokemons"
+        :key="pokemon.id"
+        md="6"
+        lg="4"
+        class="pa-5"
+      >
         <PokeCard :pokemon="pokemon" />
       </v-col>
     </v-row>
@@ -57,7 +64,10 @@ export default {
             name: resPokemon.name,
             types: resPokemon.types.map((el) => el.type.name),
             picture: resPokemon.sprites.front_default,
-            color: resSpecies.color.name,
+            color:
+              resSpecies.color.name === 'white'
+                ? 'orange'
+                : resSpecies.color.name,
             height: resPokemon.height,
             width: resPokemon.width,
             abilities: resPokemon.abilities.map((el) => el.ability.name),

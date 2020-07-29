@@ -1,33 +1,33 @@
-@each $colorname, $color in $colors {
-  .pokemon-bg-#{$colorname} {
-    width: 200px;
-    height: 200px;
-    border-radius: 100% !important;
-    margin: -150px 0 -50px -30px;
-    background-color: lighten($color, 8%);
-  }
+.pokemon-bg {
+  width: 230px;
+  height: 230px;
+  border-radius: 100% !important;
+  margin: -180px 0 -50px -30px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
-  .pokemon-type-#{$colorname} {
-    color: white;
-    font-size: 12px;
-    text-transform: capitalize;
-    background-color: lighten($color, 8%);
-    border-radius: 30px;
-    padding: 5px 10px;
-    margin-right: 5px;
-  }
+.pokemon-type {
+  color: $white;
+  font-size: 0.688rem;
+  text-transform: capitalize;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-right: 5px;
 }
 
 .pokemon-name {
-  color: white;
-  font-size: 24px;
+  color: $white;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 2px;
 }
 
 .pokemon-id {
-  color: white;
+  color: $white;
+  font-size: 0.875rem;
+  font-weight: bold;
   margin: 30px 0 0 0;
 }
 

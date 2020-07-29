@@ -1,18 +1,26 @@
+.pokeball {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .pagination::v-deep {
-  margin-top: 40px;
+  margin-top: 60px;
   .v-pagination__item {
     box-shadow: none;
     font-weight: bold;
-    font-size: 14px;
-    color: map-get($colors, gray3);
+    font-size: 0.875rem;
+    color: $gray3;
   }
   .v-pagination__item--active {
-    color: white;
+    color: $white;
   }
   .v-pagination__navigation {
     box-shadow: none;
     .v-icon {
-      color: map-get($colors, primary);
+      color: $primary;
     }
   }
 }
