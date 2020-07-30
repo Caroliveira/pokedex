@@ -3,3 +3,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.chip {
+  color: map-get($colors, white);
+  text-transform: capitalize;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}

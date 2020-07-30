@@ -1,4 +1,4 @@
 .primary-title {
-  color: $gray1;
+  color: map-get($colors, gray1);
   font-size: 4rem;
 }

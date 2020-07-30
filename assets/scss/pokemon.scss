@@ -1,0 +1,30 @@
+@each $colorname, $color in $colors {
+  .pokemon-bar-#{$colorname} {
+    padding: 110px 400px;
+    background-color: $color;
+  }
+}
+
+.pokemon-content {
+  margin: -50px 400px;
+  padding: 100px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  color: map-get($colors, white);
+}
+
+.id {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: map-get($colors, white);
+}
+
+.type {
+  font-size: 1.125rem;
+  @extend .chip !optional;
+}

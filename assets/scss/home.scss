@@ -1,3 +1,7 @@
+.content {
+  padding: 110px 220px 80px;
+}
+
 .pokeball {
   height: 300px;
   width: 300px;
@@ -12,15 +16,15 @@
     box-shadow: none;
     font-weight: bold;
     font-size: 0.875rem;
-    color: $gray3;
+    color: map-get($colors, gray3);
   }
   .v-pagination__item--active {
-    color: $white;
+    color: map-get($colors, white);
   }
   .v-pagination__navigation {
     box-shadow: none;
     .v-icon {
-      color: $primary;
+      color: map-get($colors, primary);
     }
   }
 }

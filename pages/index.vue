@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <v-img src="/pokeball.svg" class="pokeball" />
     <TitleBar />
     <v-row>
@@ -30,7 +30,7 @@
 <script>
 import TitleBar from '~/components/titleBar'
 import PokeCard from '~/components/card'
-import { getPokemons, getPokemon, getPokemonSpecies } from '~/services'
+import { getPokemons } from '~/services'
 
 export default {
   components: {
@@ -44,61 +44,28 @@ export default {
       pokemons: [],
     }
   },
-  async mounted() {
+  mounted() {
     const offset = (this.page - 1) * 12
-    const { results, count } = await getPokemons(this.$axios, offset.toString())
-    this.totalPages = Math.ceil(count / 12)
-    this.setPokemons(results)
+    this.getPokemonsAndCount(offset)
   },
   methods: {
-    async setPokemons(results) {
-      this.pokemons = await Promise.all(
-        results.map(async (el) => {
-          const resPokemon = await getPokemon(this.$axios, el.url)
-          const resSpecies = await getPokemonSpecies(
-            this.$axios,
-            resPokemon.species.url
-          )
-          const pokemon = {
-            id: resPokemon.id.toString().padStart(3, '0'),
-            name: resPokemon.name,
-            types: resPokemon.types.map((el) => el.type.name),
-            picture: resPokemon.sprites.front_default,
-            color:
-              resSpecies.color.name === 'white'
-                ? 'orange'
-                : resSpecies.color.name,
-            height: resPokemon.height,
-            width: resPokemon.width,
-            abilities: resPokemon.abilities.map((el) => el.ability.name),
-            // eggGroups: resSpecies.eggGroups.map((el) => el.name),
-            baseExp: resPokemon.base_experience,
-            captureRate: resSpecies.capture_rate,
-            baseHappiness: resSpecies.base_happiness,
-            growthRate: resSpecies.growth_rate.name,
-            stats: resPokemon.stats.map((el) => ({
-              name: el.stat.name,
-              stat: el.base_stat,
-            })),
-          }
-          return pokemon
-        })
-      )
+    async getPokemonsAndCount(num) {
+      const offset = num.toString()
+      const { pokemons, count } = await getPokemons(this.$axios, offset)
+      this.pokemons = pokemons
+      this.totalPages = Math.ceil(count / 12)
     },
-    async goPage() {
+    goPage() {
       const offset = (this.page - 1) * 12
-      const { results } = await getPokemons(this.$axios, offset.toString())
-      this.setPokemons(results)
+      this.getPokemonsAndCount(offset)
     },
-    async goNext() {
+    goNext() {
       const offset = this.page * 12
-      const { results } = await getPokemons(this.$axios, offset.toString())
-      this.setPokemons(results)
+      this.getPokemonsAndCount(offset)
     },
-    async goPrevious() {
+    goPrevious() {
       const offset = (this.page - 2) * 12
-      const { results } = await getPokemons(this.$axios, offset.toString())
-      this.setPokemons(results)
+      this.getPokemonsAndCount(offset)
     },
   },
 }

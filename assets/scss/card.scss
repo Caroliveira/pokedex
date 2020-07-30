@@ -1,4 +1,4 @@
-.pokemon-bg {
+.pokemon-circle-bg {
   width: 230px;
   height: 230px;
   border-radius: 100% !important;
@@ -7,17 +7,12 @@
 }
 
 .pokemon-type {
-  color: $white;
   font-size: 0.688rem;
-  text-transform: capitalize;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
-  padding: 5px 10px;
-  margin-right: 5px;
+  @extend .chip !optional;
 }
 
 .pokemon-name {
-  color: $white;
+  color: map-get($colors, white);
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: capitalize;
@@ -25,7 +20,7 @@
 }
 
 .pokemon-id {
-  color: $white;
+  color: map-get($colors, white);
   font-size: 0.875rem;
   font-weight: bold;
   margin: 30px 0 0 0;
