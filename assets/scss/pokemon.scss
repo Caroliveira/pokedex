@@ -28,3 +28,15 @@
   font-size: 1.125rem;
   @extend .chip !optional;
 }
+
+.tabs::v-deep {
+  border-bottom: 1px solid map-get($colors, gray5);
+  .v-tabs-bar {
+    border-radius: 0;
+    .v-tab {
+      color: map-get($colors, gray1);
+      text-transform: capitalize;
+      font-size: 1.125rem;
+    }
+  }
+}

@@ -27,11 +27,22 @@
     </div>
     <div class="pokemon-bg" />
     <v-card flat rounded="xl" class="pokemon-content">
-      <v-tabs>
-        <v-tab>About</v-tab>
-        <v-tab>Base Stats</v-tab>
-        <v-tab>Evolution</v-tab>
+      <v-tabs v-model="tab" class="tabs" color="primary">
+        <v-tab key="about">About</v-tab>
+        <v-tab key="stats">Base Stats</v-tab>
+        <v-tab key="evolution">Evolution</v-tab>
       </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item key="about">
+          about
+        </v-tab-item>
+        <v-tab-item key="stats">
+          stats
+        </v-tab-item>
+        <v-tab-item key="evolution">
+          evolution
+        </v-tab-item>
+      </v-tabs-items>
     </v-card>
   </div>
 </template>
@@ -42,8 +53,9 @@ export default {
   data() {
     return {
       id: '',
-      pokemon: {},
+      tab: 'about',
       liked: false,
+      pokemon: {},
     }
   },
   async mounted() {
