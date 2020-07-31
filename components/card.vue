@@ -12,7 +12,7 @@
           <v-img :src="pokemon.picture" />
         </v-col>
         <v-col cols="6" class="py-6">
-          <p class="pokemon-name">{{ pokemon.name }}</p>
+          <p class="h2-white mb-1">{{ pokemon.name }}</p>
           <span v-for="type in pokemon.types" :key="type" class="chip">
             {{ type }}
           </span>

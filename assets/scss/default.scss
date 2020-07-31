@@ -1,3 +1,25 @@
+@each $colorname, $color in $colors {
+  .h1-#{$colorname} {
+    font-size: 4rem;
+    font-weight: bold;
+    color: $color;
+    text-transform: capitalize;
+  }
+
+  .h2-#{$colorname} {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $color;
+    text-transform: capitalize;
+  }
+
+  .body1-#{$colorname} {
+    color: $color;
+    font-size: 1.125rem;
+    text-transform: capitalize;
+  }
+}
+
 .centralize {
   display: flex;
   align-items: center;

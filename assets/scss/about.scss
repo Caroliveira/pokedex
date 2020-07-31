@@ -1,0 +1,15 @@
+.gender {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+}
+
+.male {
+  background-color: map-get($colors, blue);
+  @extend .gender !optional;
+}
+
+.female {
+  background-color: map-get($colors, pink);
+  @extend .gender !optional;
+}

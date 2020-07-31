@@ -11,14 +11,6 @@
   @extend .chip !optional;
 }
 
-.pokemon-name {
-  color: map-get($colors, white);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin-bottom: 2px;
-}
-
 .pokemon-id {
   color: map-get($colors, white);
   font-size: 0.875rem;
