@@ -3,6 +3,11 @@
     <PokemonBar :pokemon-id="id" :pokemon="pokemon" />
     <div class="d-flex justify-center">
       <v-card flat rounded="xl" width="1000px" class="tabs-card">
+        <div class="d-flex justify-center">
+          <div class="main-picture-width">
+            <v-img :src="pokemon.picture" contain class="main-picture" />
+          </div>
+        </div>
         <v-tabs v-model="tab" class="tabs" color="primary">
           <v-tab key="about">About</v-tab>
           <v-tab key="stats">Base Stats</v-tab>
