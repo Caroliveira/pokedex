@@ -28,3 +28,26 @@
     }
   }
 }
+
+.link {
+  cursor: pointer;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.link-text {
+  font-size: 1.125rem;
+  text-decoration: underline;
+  color: map-get($colors, primary);
+}
+
+.search-not-found {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.title-404 {
+  font-size: 2.25rem;
+  color: map-get($colors, primary);
+}
