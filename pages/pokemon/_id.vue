@@ -39,7 +39,7 @@
             <About :pokemon="pokemon" />
           </v-tab-item>
           <v-tab-item key="stats">
-            stats
+            <Stats :pokemon="pokemon" />
           </v-tab-item>
           <v-tab-item key="evolution">
             evolution
@@ -53,9 +53,11 @@
 <script>
 import { getPokemon, getPokemonSpecies } from '~/services'
 import About from '~/components/about'
+import Stats from '~/components/stats'
 export default {
   components: {
     About,
+    Stats,
   },
   data() {
     return {

@@ -41,7 +41,6 @@ export async function getPokemon(axios, url) {
     })),
     effortPoints: effort.join(', '),
   }
-  console.log(pokemon)
   return pokemon
 }
 
@@ -59,6 +58,5 @@ export async function getPokemonSpecies(axios, url) {
     growthRate: data.growth_rate.name,
     species: data.genera[7].genus,
   }
-  console.log(pokemon)
   return pokemon
 }
