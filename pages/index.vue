@@ -1,9 +1,27 @@
 <template>
   <div class="content">
     <v-img src="/pokeball.svg" class="pokeball" />
-    <TitleBar @search="goSearch" />
-    <div v-if="search404" class="search-not-found">
-      <p class="title-404">Sorry, no result found :(</p>
+    <v-row class="mb-6">
+      <v-col cols="12" md="8">
+        <h1 class="h1-gray1">Pokedex</h1>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-text-field
+          v-model="search"
+          solo
+          flat
+          rounded
+          clearable
+          hide-details
+          placeholder="Search Pokemon"
+          prepend-inner-icon="mdi-magnify"
+          background-color="gray6"
+          @keyup.enter="goSearch"
+        />
+      </v-col>
+    </v-row>
+    <div v-if="search404" class="error-component">
+      <p class="title-error">Sorry, no result found :(</p>
       <p class="body1-gray3 transform-none">
         The Pokemon you searched was <br />
         unfortunately not found or doest't exist.
@@ -41,18 +59,17 @@
 
 <script>
 import PokeCard from '~/components/card'
-import TitleBar from '~/components/titleBar'
 import { getPokemons, getPokemon, getPokemonSpecies } from '~/services'
 
 export default {
   components: {
     PokeCard,
-    TitleBar,
   },
   data() {
     return {
+      search: '',
       isSearching: false,
-      search404: true,
+      search404: false,
       page: 1,
       totalPages: 0,
       pokemons: [],
@@ -69,6 +86,8 @@ export default {
       this.totalPages = Math.ceil(count / 12)
     },
     backHome() {
+      this.isSearching = false
+      this.search404 = false
       this.getPokemonsAndCount(0)
     },
     goPage() {
@@ -83,16 +102,30 @@ export default {
       const offset = (this.page - 2) * 12
       this.getPokemonsAndCount(offset)
     },
-    async goSearch(search) {
-      this.isSearching = true
-      const resPokemon = await getPokemon(this.$axios, `pokemon/${search}`)
-      const resSpecies = await getPokemonSpecies(this.$axios, resPokemon.url)
-      this.pokemons = [
-        {
-          ...resPokemon,
-          ...resSpecies,
-        },
-      ]
+    async goSearch() {
+      if (this.search && this.search !== '') {
+        const resPokemon = await getPokemon(
+          this.$axios,
+          `pokemon/${this.search}`
+        )
+        if (resPokemon.status) {
+          this.search404 = true
+        } else {
+          this.isSearching = true
+          const resSpecies = await getPokemonSpecies(
+            this.$axios,
+            resPokemon.url
+          )
+          this.pokemons = [
+            {
+              ...resPokemon,
+              ...resSpecies,
+            },
+          ]
+        }
+      } else if (this.search404) {
+        this.backHome()
+      }
     },
   },
 }

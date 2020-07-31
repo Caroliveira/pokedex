@@ -20,10 +20,28 @@
   }
 }
 
-.centralize {
+.error-component {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.title-error {
+  font-size: 2.25rem;
+  color: map-get($colors, primary);
+}
+
+.link {
+  cursor: pointer;
+  margin-top: 50px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  text-decoration: none;
+}
+
+.link-text {
+  font-size: 1.125rem;
+  text-decoration: underline;
+  color: map-get($colors, primary);
 }
 
 .chip {
@@ -33,6 +51,12 @@
   border-radius: 30px;
   padding: 5px 10px;
   margin-right: 5px;
+}
+
+.centralize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .transform-none {
