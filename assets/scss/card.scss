@@ -1,3 +1,11 @@
+.pokecard {
+  transition: margin 0.4s;
+}
+
+.pokecard:hover {
+  margin-top: -10px;
+}
+
 .pokemon-circle-bg {
   width: 230px;
   height: 230px;
