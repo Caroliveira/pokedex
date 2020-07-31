@@ -31,9 +31,9 @@
       <v-col
         v-for="pokemon in pokemons"
         :key="pokemon.id"
-        md="6"
-        lg="4"
-        class="pa-5"
+        cols="6"
+        md="4"
+        class="pa-sm-2 pa-md-5"
       >
         <PokeCard :pokemon="pokemon" />
       </v-col>

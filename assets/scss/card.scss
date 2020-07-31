@@ -18,6 +18,26 @@
   margin: 30px 0 0 0;
 }
 
+.row-height {
+  height: 96px;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+.pokemon-card {
+  @include size(150px);
+  overflow: hidden;
+}
+
+.picture-bg {
+  border-radius: 100% !important;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .ov-hidden {
   overflow: hidden;
 }

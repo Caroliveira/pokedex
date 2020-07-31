@@ -68,13 +68,17 @@
     .h1-#{$colorname} {
       font-size: 1.5rem;
     }
-  
+
     .h2-#{$colorname} {
       font-size: 1rem;
     }
-  
+
     .body1-#{$colorname} {
       font-size: 0.875rem;
     }
+  }
+
+  .chip {
+    font-size: 0.688rem;
   }
 }

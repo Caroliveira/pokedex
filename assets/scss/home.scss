@@ -28,3 +28,14 @@
     }
   }
 }
+
+@media (max-width: 1280px) {
+  .content{
+    padding: 30px 20px;
+  }
+
+  .pokeball {
+    height: 180px;
+    width: 180px;
+  }
+}
