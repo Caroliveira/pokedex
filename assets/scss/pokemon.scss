@@ -24,9 +24,35 @@
   .v-tabs-bar {
     border-radius: 0;
     .v-tab {
+      @extend .body1-gray1 !optional;
       color: map-get($colors, gray1);
       text-transform: capitalize;
       font-size: 1.125rem;
     }
+  }
+}
+
+.tabs-card {
+  margin: -48px 20px 0;
+  padding: 64px;
+}
+
+@media (max-width: 1280px) {
+  @each $colorname, $color in $colors {
+    .pokemon-bar-#{$colorname} {
+      padding: 20px 20px 110px;
+    }
+  }
+
+  .type {
+    font-size: 0.813rem;
+  }
+
+  .v-tab {
+    font-size: 0.875 !important;
+  }
+
+  .tabs-card {
+    padding: 64px 20px 20px;
   }
 }

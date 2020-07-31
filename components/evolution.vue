@@ -1,14 +1,14 @@
 <template>
   <div class="mt-10">
     <v-row>
-      <v-col v-for="ev in evolution" :key="ev.name" cols="6">
+      <v-col v-for="ev in evolution" :key="ev.name" cols="12" md="6">
         <v-card flat>
           <p class="h2-gray1">Stage {{ ev.stage }}</p>
           <v-row align="center">
-            <v-col cols="auto">
+            <v-col cols="6">
               <v-img :src="ev.picture" class="evolution-picture" />
             </v-col>
-            <v-col cols="auto">
+            <v-col cols="6">
               <p class="body1-gray3">{{ ev.name }}</p>
               <p class="body1-gray2">
                 {{ ev.trigger }},

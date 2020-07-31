@@ -1,34 +1,8 @@
 <template>
   <div>
-    <div :class="`pokemon-bar-${pokemon.color}`" class="d-flex justify-center">
-      <div class="pokemon-bar-width">
-        <v-row align="center">
-          <v-col cols="1">
-            <v-icon color="white" @click="goBack">mdi-arrow-left</v-icon>
-          </v-col>
-          <v-col>
-            <h1 class="h1-white">{{ pokemon.name }}</h1>
-          </v-col>
-          <v-col cols="1" class="d-flex justify-end">
-            <v-icon color="white" @click="like">
-              {{ liked ? 'mdi-heart' : 'mdi-heart-outline' }}
-            </v-icon>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col offset-md="1">
-            <span v-for="type in pokemon.types" :key="type" class="chip">
-              {{ type }}
-            </span>
-          </v-col>
-          <v-col cols="1" class="d-flex justify-end">
-            <p class="h2-white">#{{ id }}</p>
-          </v-col>
-        </v-row>
-      </div>
-    </div>
+    <PokemonBar :pokemon-id="id" :pokemon="pokemon" />
     <div class="d-flex justify-center">
-      <v-card flat rounded="xl" width="1000px" class="mt-n12 mx-5 pa-16">
+      <v-card flat rounded="xl" width="1000px" class="tabs-card">
         <v-tabs v-model="tab" class="tabs" color="primary">
           <v-tab key="about">About</v-tab>
           <v-tab key="stats">Base Stats</v-tab>
@@ -55,17 +29,18 @@ import { getPokemon, getPokemonSpecies } from '~/services'
 import About from '~/components/about'
 import Stats from '~/components/stats'
 import Evolution from '~/components/evolution'
+import PokemonBar from '~/components/pokemonBar'
 export default {
   components: {
     About,
     Stats,
     Evolution,
+    PokemonBar,
   },
   data() {
     return {
       id: '',
       tab: 'about',
-      liked: false,
       pokemon: {},
     }
   },
@@ -82,14 +57,6 @@ export default {
       this.pokemon = pokemon
     }
     this.id = this.pokemon.id.toString().padStart(3, '0')
-  },
-  methods: {
-    goBack() {
-      this.$router.push('/')
-    },
-    like() {
-      this.liked = !this.liked
-    },
   },
 }
 </script>
