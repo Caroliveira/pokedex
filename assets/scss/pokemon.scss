@@ -37,7 +37,6 @@
   .v-tabs-bar {
     border-radius: 0;
     .v-tab {
-      @extend .body1-gray1 !optional;
       color: map-get($colors, gray1);
       text-transform: capitalize;
       font-size: 1.125rem;
@@ -61,12 +60,12 @@
     font-size: 0.813rem;
   }
 
-  .v-tab {
-    font-size: 0.875 !important;
-  }
-
   .tabs-card {
     padding: 64px 20px 20px;
+  }
+
+  .v-tab::v-deep {
+    font-size: 0.875;
   }
 
   .main-picture{

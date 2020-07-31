@@ -1,20 +1,24 @@
-# pokedex
+# Pokedex
 
-## Build Setup
+O objetivo deste projeto foi criar uma PokeDex que deve mostrar uma lista com diversos
+pokemons existentes e uma visão detalhada das características e habilidades de cada um.
+A aplicação consume uma API REST para obter as informações necessárias, https://pokeapi.co/.
 
-```bash
-# install dependencies
-$ yarn install
+## Pré-requisitos
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+Para rodar esse programa é necessário:
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+↦ Node >= 8.10 e npm >= 5.6 instalado na sua máquina;
 
-# generate static project
-$ yarn generate
-```
+↦ Fazer o clone ou download dessa aplicação.
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Instalação
+
+Após clonar, ou fazer o download, deste projeto, abrir o terminal na pasta do projeto e digitar os seguintes comandos:
+
+↦ npm install ou yarn install
+
+↦ npm run dev ou yarn dev
+
+Em seguida, abra o navegador na seguinte URL para ver o resultado: http://localhost:3000.
+

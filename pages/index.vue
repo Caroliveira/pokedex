@@ -3,7 +3,7 @@
     <v-img src="/pokeball.svg" class="pokeball" />
     <v-row class="mb-6">
       <v-col cols="12" md="8">
-        <h1 class="h1-gray1">Pokedex</h1>
+        <h1 class="h1-gray1" @click="backHome">Pokedex</h1>
       </v-col>
       <v-col cols="12" md="4">
         <v-text-field
@@ -117,7 +117,7 @@ export default {
         this.loading = true
         const resPokemon = await getPokemon(
           this.$axios,
-          `pokemon/${this.search}`
+          `pokemon/${this.search.toLowerCase()}`
         )
         if (resPokemon.status) {
           this.search404 = true

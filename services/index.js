@@ -32,7 +32,7 @@ export async function getPokemon(axios, url) {
       name: data.name,
       types: data.types.map((el) => el.type.name),
       picture: data.sprites.front_default,
-      height: `${data.height / 10} cm`,
+      height: `${data.height * 10} cm`,
       weight: `${data.weight / 10} kg`,
       abilities: abilities.join(', '),
       baseExp: data.base_experience,
@@ -71,7 +71,7 @@ export async function getEvolutionChain(axios, url) {
   const data = response.data.chain.evolves_to
   const evolution = []
   data.map((el) => evolvesTo(axios, evolution, el, 0))
-  return evolution.reverse()
+  return evolution
 }
 
 async function evolvesTo(axios, ar, pokemon, key) {
