@@ -49,3 +49,19 @@
 .ov-hidden {
   overflow: hidden;
 }
+
+@media (max-width: 1280px) {
+  .pokemon-circle-bg {
+    width: 200px;
+    height: 200px;
+    margin: -160px 0 -40px -25px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .pokemon-circle-bg {
+    width: 200px;
+    height: 200px;
+    margin: -160px 0 -40px -40px;
+  }
+}
