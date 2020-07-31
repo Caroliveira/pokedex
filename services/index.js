@@ -54,9 +54,36 @@ export async function getPokemonSpecies(axios, url) {
     color: data.color.name === 'white' ? 'orange' : data.color.name,
     eggCycle: data.hatch_counter,
     eggGroups: eggGroups.join(', '),
+    evolution: data.evolution_chain.url,
     gender: data.gender_rate,
     growthRate: data.growth_rate.name,
     species: data.genera[7].genus,
   }
   return pokemon
+}
+
+export async function getEvolutionChain(axios, url) {
+  const response = await axios.get(url)
+  const data = response.data.chain.evolves_to
+  const evolution = []
+  data.map((el, i) => evolvesTo(axios, evolution, el, i))
+  return evolution
+}
+
+async function evolvesTo(axios, ar, pokemon, key) {
+  const i = key + 1
+  if (pokemon.evolves_to.length !== 0) {
+    pokemon.evolves_to.map((el) => evolvesTo(axios, ar, el, i))
+  }
+  const name = pokemon.species.name
+  const response = await getPokemon(axios, `pokemon/${name}`)
+  const evolution = {
+    stage: i,
+    level: pokemon.evolution_details[0].min_level,
+    trigger: pokemon.evolution_details[0].trigger.name,
+    picture: response.picture,
+    name,
+  }
+  ar.push(evolution)
+  return ar
 }

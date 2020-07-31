@@ -13,3 +13,14 @@
   background-color: map-get($colors, pink);
   @extend .gender !optional;
 }
+
+.transform-none {
+  text-transform: none;
+}
+
+.evolution-picture {
+  height: 10rem;
+  width: 10rem;
+  border: 1px solid map-get($colors, gray5);
+  border-radius: 10px;
+}

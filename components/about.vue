@@ -67,4 +67,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="~/assets/scss/about.scss" scoped />
+<style lang="scss" src="~/assets/scss/tabs.scss" scoped />
