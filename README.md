@@ -22,3 +22,4 @@ Após clonar, ou fazer o download, deste projeto, abrir o terminal na pasta do p
 
 Em seguida, abra o navegador na seguinte URL para ver o resultado: http://localhost:3000.
 
+Também é possível ver o resultado no seguinte link: https://caroliveira.github.io/pokedex/
