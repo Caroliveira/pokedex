@@ -13,9 +13,7 @@
         <div class="female ml-8 mr-2" />
         <span> {{ female }} </span>
       </v-col>
-      <v-col v-else cols="8" class="body1-gray2">
-        Genderless
-      </v-col>
+      <v-col v-else cols="8" class="body1-gray2"> Genderless </v-col>
       <v-col cols="4" class="body1-gray3"> Egg Groups </v-col>
       <v-col cols="8" class="body1-gray2"> {{ pokemon.eggGroups }} </v-col>
       <v-col cols="4" class="body1-gray3"> Egg Cycle </v-col>
